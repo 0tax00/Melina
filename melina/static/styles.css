@@ -1,0 +1,111 @@
+/* Configurações básicas para a página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34; /* Um cinza mais suave */
+    color: #d8c291; /* Dourado suave */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* Estilos para cabeçalhos */
+h1, h2 {
+    color: #8a7f60; /* Bronze */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Estilização comum para botões e links */
+button, input[type="submit"], a {
+    background-color: #4a5568; /* Azul escuro suave */
+    color: #d8c291; /* Dourado para texto */
+    padding: 6px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 4px;
+}
+
+button:hover, input[type="submit"]:hover, a:hover {
+    background-color: #2d3748; /* Azul mais escuro */
+    color: #ffffff;
+}
+
+/* Formatação para formulários e entradas */
+input[type="text"], input[type="file"], textarea {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333;
+    border: 1px solid #d8c291; /* Dourado para borda */
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1em;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Estilos para cartões usados em listagens */
+.card {
+    background-color: #2d3748; /* Azul escuro */
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    color: #d8c291; /* Dourado */
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+}
+
+.card-content {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+/* Estilos para listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #4a5568; /* Azul escuro suave */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Ajustes nos botões */
+button, input[type="submit"] {
+    min-width: 90px;
+    max-width: 100%;
+}

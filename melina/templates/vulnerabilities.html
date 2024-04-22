@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <input type="text" placeholder="Pesquisar vulnerabilidades..." onkeyup="searchVulnerability()">
+    <button onclick="window.location.href='{{ url_for('add_vulnerability') }}'">Adicionar Vulnerabilidade</button>
+    {% if vulnerability_list %}
+        <ul>
+            {% for vulnerability in vulnerability_list %}
+                <li>
+                    <a href="{{ url_for('view_vulnerability', vulnerability_id=vulnerability._id) }}">{{ vulnerability.name }}</a>
+                    <div>
+                        <button onclick="window.location.href='{{ url_for('update_vulnerability', vulnerability_id=vulnerability._id) }}'">Atualizar</button>
+                        <form method="POST" action="{{ url_for('delete_vulnerability', vulnerability_id=vulnerability._id) }}" onsubmit="return confirm('Tem certeza que deseja deletar esta vulnerabilidade?');">
+                            <input type="submit" value="Deletar">
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma vulnerabilidade cadastrada.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}" class="return-link">Voltar à página inicial</a>
+    <script>
+        function searchVulnerability() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.querySelector('input[type="text"]');
+            filter = input.value.toUpperCase();
+            ul = document.querySelector('ul');
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

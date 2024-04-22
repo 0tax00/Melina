@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+<body>
+    <h1>{{ title }}</h1>
+    
+    <label for="searchInput">Pesquisar Relatórios</label>
+    <input type="text" id="searchInput" placeholder="Digite para pesquisar..." onkeyup="searchReports()">
+    
+    {% if reports_list %}
+        <ul id="reportList">
+            {% for report in reports_list %}
+                <li>
+                    <a href="{{ url_for('download_relatorio', report_name=report) }}" download>{{ report }}</a>
+                    <!-- Corrigido para usar a nova rota de exclusão -->
+                    <form method="POST" action="{{ url_for('delete_relatorio', report_name=report) }}" onsubmit="return confirm('Tem certeza que deseja deletar este relatório?');">
+                        <input type="submit" value="Deletar">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum relatório disponível.</p>
+    {% endif %}
+    
+    <a href="{{ url_for('index') }}" class="return-link">Voltar à página inicial</a>
+
+    <script>
+        function searchReports() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toUpperCase();
+            var ul = document.getElementById('reportList');
+            var li = ul.getElementsByTagName('li');
+
+            for (var i = 0; i < li.length; i++) {
+                var a = li[i].getElementsByTagName("a")[0];
+                var txtValue = a.textContent || a.innerText;
+                li[i].style.display = (txtValue.toUpperCase().indexOf(filter) > -1) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>

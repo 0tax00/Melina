@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <!-- Referência ao arquivo de estilos no diretório 'static' -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <!-- Formulário para upload de relatório -->
+    <form method="post" action="{{ url_for('upload_relatorio') }}" enctype="multipart/form-data">
+        <div class="card">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="card">
+            <label for="file">Arquivo (ZIP apenas):</label>
+            <input type="file" id="file" name="file" accept=".zip" required>
+        </div>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
