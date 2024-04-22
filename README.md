@@ -88,4 +88,4 @@ Melina surgiu em um momento de necessidade durante a eWPTX e a jogabilidade de E
 
 Contribuições são bem-vindas. Para contribuir, você pode abrir issues ou enviar pull requests através do repositório no GitHub.
 
-Para mais informações e suporte, visite o [repositório GitHub](https://github.com/0tax00/Melina). ou me mande um e-mail mateusgodinho0102@gmail.com o/
+Para mais informações e suporte me mande um e-mail mateusgodinho0102@gmail.com o/, por favor lembre-se que esse é apenas um projeto pequeno então não venha com 30 pedras na mão.
