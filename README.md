@@ -28,6 +28,7 @@ Para informações mais completas e detalhadas peço que leia a postagem [Melina
 git clone https://github.com/0tax00/Melina.git
 cd Melina
 sudo docker build -t melina .
+sudo docker run -d -p 80:80 melina:latest /bin/bash
 ```
 
 2. **Utilizar imagem pré-fabricada do Docker Hub:**
