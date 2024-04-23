@@ -115,7 +115,7 @@ int main() {
 }
 ```
 
-![Requisição - *UUID* do projeto](/img/posts/me-01.png){ width=80% }
+![Requisição - *UUID* do projeto](me-01.png){ width=80% }
 
 ### Impacto técnico
 
