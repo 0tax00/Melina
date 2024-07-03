@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Melina é uma ferramenta criada para simplificar a geração de relatórios, especialmente voltada para pentests e outras aplicações técnicas. Ela permite a integração de Markdown com LaTeX, oferecendo uma solução eficaz para quem prefere evitar o formato DOCX. Melina é ideal para quem busca uma ferramenta simples e direta para a criação de relatórios em PDF.
+Melina é uma ferramenta criada para simplificar a geração de relatórios, especialmente voltada para pentests e outras aplicações técnicas. Ela permite a integração de Markdown com LaTeX, oferecendo uma solução eficaz para quem prefere evitar o formato DOCX, é ideal para quem busca uma ferramenta simples e direta para a criação de relatórios em PDF.
 
 Para informações mais completas e detalhadas peço que leia a postagem [Melina - Ferramenta de Geração de Relatórios para Pentests](https://0tax00.github.io/posts/Melina/)
 
